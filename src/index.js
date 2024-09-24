@@ -3,4 +3,4 @@ import "./styles/modern-normalize.css";
 
 import { weatherInfo } from "./components/barrel";
 
-weatherInfo();
+weatherInfo("London");
