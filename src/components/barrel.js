@@ -1,0 +1,1 @@
+export { weatherInfo } from "./app";
