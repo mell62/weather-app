@@ -1,1 +1,1 @@
-export { weatherObj } from "./app";
+export { searchLocation } from "./app";

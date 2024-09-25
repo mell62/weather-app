@@ -1,6 +1,9 @@
 import "./styles/style.css";
 import "./styles/modern-normalize.css";
 
-import { weatherInfo } from "./components/barrel";
+import { searchLocation } from "./components/barrel";
 
-weatherInfo("London");
+const locationForm = document.querySelector(".location-form");
+
+locationForm.addEventListener("submit", (event) => event.preventDefault());
+locationForm.addEventListener("submit", searchLocation);

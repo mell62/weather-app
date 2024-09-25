@@ -1,9 +1,12 @@
-export { weatherObj };
+export { weatherObj, searchLocation };
 
 const weatherInfo = async function getWeatherInfo(location) {
   const weatherResponse = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=JQDQF5KAWUVBQZVF6ETKE2VDC&contentType=json`,
   );
+  if (!weatherResponse.ok) {
+    throw new Error("Please enter valid location");
+  }
   const weatherData = await weatherResponse.json();
   return weatherData;
 };
@@ -29,4 +32,15 @@ const weatherObj = async function makeWeatherObj(location) {
     weekData: weatherData.days.slice(0, 7),
   };
   return obj;
+};
+
+const searchLocation = async function getLocation() {
+  const locationInput = document.querySelector(".location-input");
+  const location = locationInput.value;
+  try {
+    const weatherData = await weatherObj(location);
+    console.log(weatherData);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
