@@ -1,1 +1,1 @@
-export { weatherInfo } from "./app";
+export { weatherObj } from "./app";
