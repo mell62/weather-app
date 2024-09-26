@@ -39,7 +39,7 @@ const searchLocation = async function getLocation() {
   const location = locationInput.value;
   try {
     const weatherData = await weatherObj(location);
-    console.log(weatherData);
+    return weatherData;
   } catch (error) {
     console.log(error.message);
   }
