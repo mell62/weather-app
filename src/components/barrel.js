@@ -3,4 +3,5 @@ export {
   currentLocation,
   currentCondition,
   currentTemperature,
+  currentFeelslike,
 } from "./current-interface";

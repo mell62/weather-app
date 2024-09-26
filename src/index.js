@@ -5,6 +5,7 @@ import {
   currentLocation,
   currentCondition,
   currentTemperature,
+  currentFeelslike,
 } from "./components/barrel";
 
 const locationForm = document.querySelector(".location-form");
@@ -13,3 +14,4 @@ locationForm.addEventListener("submit", (event) => event.preventDefault());
 locationForm.addEventListener("submit", currentLocation);
 locationForm.addEventListener("submit", currentCondition);
 locationForm.addEventListener("submit", currentTemperature);
+locationForm.addEventListener("submit", currentFeelslike);
