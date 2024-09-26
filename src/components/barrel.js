@@ -1,2 +1,2 @@
 export { searchLocation } from "./app";
-export { currentLocation } from "./current-interface";
+export { currentLocation, currentCondition } from "./current-interface";
