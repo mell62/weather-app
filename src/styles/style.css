@@ -2,8 +2,24 @@ body {
   height: 100vh;
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
 .current-weather-container,
 .hourly-weather-container {
   border: 0.2rem solid black;
   width: max-content;
+  height: max-content;
+}
+
+.hourly-weather-container {
+  width: 60rem;
+  overflow-x: auto;
+}
+
+.hourly-items-container {
+  display: flex;
 }
