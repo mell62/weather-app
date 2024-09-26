@@ -1,2 +1,6 @@
 export { searchLocation } from "./app";
-export { currentLocation, currentCondition } from "./current-interface";
+export {
+  currentLocation,
+  currentCondition,
+  currentTemperature,
+} from "./current-interface";

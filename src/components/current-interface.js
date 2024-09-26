@@ -1,8 +1,9 @@
-export { currentLocation, currentCondition };
+export { currentLocation, currentCondition, currentTemperature };
 import { searchLocation } from "./barrel";
 
 const locationEle = document.querySelector(".current-location");
 const currentConditionEle = document.querySelector(".current-condition");
+const currentTemperatureEle = document.querySelector(".current-temperature");
 
 const currentLocation = async function populateCurrentLocation() {
   const weatherData = await searchLocation();
@@ -14,4 +15,10 @@ const currentCondition = async function populateCurrentCondition() {
   const weatherData = await searchLocation();
   const condition = weatherData.condition;
   currentConditionEle.textContent = condition;
+};
+
+const currentTemperature = async function populateCurrentTemperature() {
+  const weatherData = await searchLocation();
+  const temperature = weatherData.temperature;
+  currentTemperatureEle.textContent = `${temperature}°C`;
 };
