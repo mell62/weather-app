@@ -10,7 +10,8 @@ main {
 }
 
 .current-weather-container,
-.hourly-weather-container {
+.hourly-weather-container,
+.todays-weather-container {
   border: 0.2rem solid black;
   width: max-content;
   height: max-content;
