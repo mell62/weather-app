@@ -1,5 +1,5 @@
 export { fetchWeatherWhileLoading };
-import { searchLocation } from "./barrel";
+import { errorHandler, searchLocation } from "./barrel";
 
 const loadingEle = document.querySelector(".loading-interface");
 
@@ -17,8 +17,8 @@ const fetchWeatherWhileLoading = async function fetchWhileLoadingFunc() {
     const weatherData = await searchLocation();
     disableLoading();
     return weatherData;
-  } catch (error) {
+  } catch {
     disableLoading();
-    console.log(error.message);
+    errorHandler();
   }
 };

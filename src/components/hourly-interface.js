@@ -1,5 +1,5 @@
 export { hourlyWeather };
-import { fetchWeatherWhileLoading } from "./barrel";
+import { errorHandler, fetchWeatherWhileLoading } from "./barrel";
 
 const hourEles = document.querySelectorAll(".hourly-item");
 
@@ -16,7 +16,7 @@ const hourlyWeather = async function populateHourlyWeather() {
       conditionEle.textContent = hourlyData[index].conditions;
       temperatureEle.textContent = hourlyData[index].temp;
     });
-  } catch (error) {
-    console.log(error.message);
+  } catch {
+    errorHandler();
   }
 };

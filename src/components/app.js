@@ -1,14 +1,21 @@
-export { weatherObj, searchLocation };
+export { weatherObj, searchLocation, errorHandler };
+
+const errorMsgEle = document.querySelector(".error-message");
 
 const weatherInfo = async function getWeatherInfo(location) {
   const weatherResponse = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=JQDQF5KAWUVBQZVF6ETKE2VDC&contentType=json`,
   );
   if (!weatherResponse.ok) {
-    throw new Error("Please enter valid location");
+    console.log(`Error: ${weatherResponse.status}`);
   }
   const weatherData = await weatherResponse.json();
   return weatherData;
+};
+
+const errorHandler = function displayError() {
+  errorMsgEle.textContent =
+    "Weather Sleuth is sleepy. Please give it a valid location (and some coffee), or try again later.";
 };
 
 const weatherObj = async function makeWeatherObj(location) {
@@ -40,7 +47,7 @@ const searchLocation = async function getLocation() {
   try {
     const weatherData = await weatherObj(location);
     return weatherData;
-  } catch (error) {
-    console.log(error.message);
+  } catch {
+    errorHandler();
   }
 };
