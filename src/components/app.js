@@ -1,4 +1,4 @@
-export { weatherObj, searchLocation, errorHandler };
+export { weatherObj, searchLocation, errorHandler, removeError };
 
 const errorMsgEle = document.querySelector(".error-message");
 
@@ -16,6 +16,10 @@ const weatherInfo = async function getWeatherInfo(location) {
 const errorHandler = function displayError() {
   errorMsgEle.textContent =
     "Weather Sleuth is sleepy. Please give it a valid location (and some coffee), or try again later.";
+};
+
+const removeError = function stopDisplayError() {
+  errorMsgEle.textContent = "";
 };
 
 const weatherObj = async function makeWeatherObj(location) {
