@@ -16,24 +16,23 @@ const currentCondition = function populateCurrentCondition(data) {
   currentConditionEle.textContent = condition;
 };
 
-const currentTemperature = function populateCurrentTemperature(data, unit) {
+const currentTemperature = function populateCurrentTemperature(data) {
   const temperature = data.temperature;
-  currentTemperatureEle.textContent = `${temperature}°${unit}`;
+  currentTemperatureEle.textContent = `${temperature}°`;
 };
 
-const currentFeelslike = function populateCurrentFeelslike(data, unit) {
+const currentFeelslike = function populateCurrentFeelslike(data) {
   const feelslike = data.feelslike;
-  currentFeelslikeEle.textContent = `Feelslike: ${feelslike}°${unit}`;
+  currentFeelslikeEle.textContent = `Feelslike: ${feelslike}°`;
 };
 
 const currentWeather = async function populateCurrentWeather() {
   try {
     const weatherData = await fetchWeatherWhileLoading();
-    const weatherUnit = "C";
     currentLocation(weatherData);
     currentCondition(weatherData);
-    currentTemperature(weatherData, weatherUnit);
-    currentFeelslike(weatherData, weatherUnit);
+    currentTemperature(weatherData);
+    currentFeelslike(weatherData);
   } catch {
     errorHandler();
   }
