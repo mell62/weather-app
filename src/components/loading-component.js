@@ -1,5 +1,12 @@
 export { fetchWeatherWhileLoading };
-import { errorHandler, removeError, searchLocation } from "./barrel";
+import {
+  errorHandler,
+  removeError,
+  currentWeather,
+  hourlyWeather,
+  todaysWeather,
+  dailyWeather,
+} from "./barrel";
 
 const loadingEle = document.querySelector(".loading-interface");
 
@@ -14,10 +21,14 @@ const disableLoading = function enableLoadingFunction() {
 const fetchWeatherWhileLoading = async function fetchWhileLoadingFunc() {
   try {
     enableLoading();
-    const weatherData = await searchLocation();
+    await Promise.all([
+      currentWeather(),
+      hourlyWeather(),
+      todaysWeather(),
+      dailyWeather(),
+    ]);
     disableLoading();
     removeError();
-    return weatherData;
   } catch {
     disableLoading();
     errorHandler();

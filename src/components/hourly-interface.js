@@ -1,5 +1,5 @@
 export { hourlyWeather, slicedHour };
-import { errorHandler, fetchWeatherWhileLoading } from "./barrel";
+import { errorHandler, searchLocation } from "./barrel";
 
 const hourEles = document.querySelectorAll(".hourly-item");
 
@@ -10,7 +10,7 @@ const slicedHour = function sliceHour(hour) {
 
 const hourlyWeather = async function populateHourlyWeather() {
   try {
-    const weatherData = await fetchWeatherWhileLoading();
+    const weatherData = await searchLocation();
     const hourlyData = weatherData.hourlyData;
 
     hourEles.forEach((hourEle, index) => {

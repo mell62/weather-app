@@ -2,12 +2,9 @@ import "./styles/style.css";
 import "./styles/modern-normalize.css";
 
 import {
-  currentWeather,
-  hourlyWeather,
-  todaysWeather,
-  dailyWeather,
   activateCelsius,
   activateFahrenheit,
+  fetchWeatherWhileLoading,
 } from "./components/barrel";
 
 const locationForm = document.querySelector(".location-form");
@@ -15,10 +12,7 @@ const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
 
 const populateData = async function dataPopulator() {
-  currentWeather();
-  hourlyWeather();
-  todaysWeather();
-  dailyWeather();
+  fetchWeatherWhileLoading();
 };
 
 locationForm.addEventListener("submit", (event) => event.preventDefault());

@@ -1,5 +1,5 @@
 export { dailyWeather };
-import { errorHandler, fetchWeatherWhileLoading } from "./barrel";
+import { errorHandler, searchLocation } from "./barrel";
 
 const dailyEles = document.querySelectorAll(".daily-item");
 
@@ -22,7 +22,7 @@ const todayAndTomorrow = function setTodayAndTomorrow() {
 
 const dailyWeather = async function populateDailyWeather() {
   try {
-    const weatherData = await fetchWeatherWhileLoading();
+    const weatherData = await searchLocation();
     const dailyData = weatherData.weekData;
 
     dailyEles.forEach((dailyEle, index) => {
