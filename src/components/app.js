@@ -22,8 +22,7 @@ const removeError = function stopDisplayError() {
   errorMsgEle.textContent = "";
 };
 
-const weatherObj = async function makeWeatherObj(location) {
-  const weatherData = await weatherInfo(location);
+const weatherObj = async function makeWeatherObj(weatherData) {
   const obj = {
     location: weatherData.resolvedAddress,
     condition: weatherData.currentConditions.conditions,
@@ -49,8 +48,9 @@ const searchLocation = async function getLocation() {
   const locationInput = document.querySelector(".location-input");
   const location = locationInput.value;
   try {
-    const weatherData = await weatherObj(location);
-    return weatherData;
+    const weatherData = await weatherInfo(location);
+    const weatherDataObj = weatherObj(weatherData);
+    return weatherDataObj;
   } catch {
     errorHandler();
   }
