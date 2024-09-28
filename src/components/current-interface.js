@@ -1,5 +1,5 @@
 export { currentWeather };
-import { errorHandler, searchLocation } from "./barrel";
+import { searchLocation } from "./barrel";
 
 const locationEle = document.querySelector(".current-location");
 const currentConditionEle = document.querySelector(".current-condition");
@@ -27,13 +27,9 @@ const currentFeelslike = function populateCurrentFeelslike(data) {
 };
 
 const currentWeather = async function populateCurrentWeather() {
-  try {
-    const weatherData = await searchLocation();
-    currentLocation(weatherData);
-    currentCondition(weatherData);
-    currentTemperature(weatherData);
-    currentFeelslike(weatherData);
-  } catch {
-    errorHandler();
-  }
+  const weatherData = await searchLocation();
+  currentLocation(weatherData);
+  currentCondition(weatherData);
+  currentTemperature(weatherData);
+  currentFeelslike(weatherData);
 };

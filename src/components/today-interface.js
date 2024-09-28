@@ -1,5 +1,5 @@
 export { todaysWeather };
-import { searchLocation, errorHandler, slicedHour, deriveUnit } from "./barrel";
+import { searchLocation, slicedHour, deriveUnit } from "./barrel";
 
 const maxTempEle = document.querySelector(".max-temp");
 const minTempEle = document.querySelector(".min-temp");
@@ -123,19 +123,15 @@ const moonphase = function populateMoonphase(data) {
 };
 
 const todaysWeather = async function populateTodaysWeather() {
-  try {
-    const weatherData = await searchLocation();
-    maxTemp(weatherData);
-    minTemp(weatherData);
-    humidity(weatherData);
-    windspeed(weatherData);
-    visibility(weatherData);
-    dew(weatherData);
-    pressure(weatherData);
-    sunrise(weatherData);
-    sunset(weatherData);
-    moonphase(weatherData);
-  } catch {
-    errorHandler();
-  }
+  const weatherData = await searchLocation();
+  maxTemp(weatherData);
+  minTemp(weatherData);
+  humidity(weatherData);
+  windspeed(weatherData);
+  visibility(weatherData);
+  dew(weatherData);
+  pressure(weatherData);
+  sunrise(weatherData);
+  sunset(weatherData);
+  moonphase(weatherData);
 };

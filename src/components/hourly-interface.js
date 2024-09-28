@@ -1,5 +1,5 @@
 export { hourlyWeather, slicedHour };
-import { errorHandler, searchLocation } from "./barrel";
+import { searchLocation } from "./barrel";
 
 const hourEles = document.querySelectorAll(".hourly-item");
 
@@ -9,19 +9,15 @@ const slicedHour = function sliceHour(hour) {
 };
 
 const hourlyWeather = async function populateHourlyWeather() {
-  try {
-    const weatherData = await searchLocation();
-    const hourlyData = weatherData.hourlyData;
+  const weatherData = await searchLocation();
+  const hourlyData = weatherData.hourlyData;
 
-    hourEles.forEach((hourEle, index) => {
-      const timeEle = hourEle.querySelector(".hour-time");
-      const conditionEle = hourEle.querySelector(".hour-condition");
-      const temperatureEle = hourEle.querySelector(".hour-temperature");
-      timeEle.textContent = slicedHour(hourlyData[index].datetime);
-      conditionEle.textContent = hourlyData[index].conditions;
-      temperatureEle.textContent = `${hourlyData[index].temp}°`;
-    });
-  } catch {
-    errorHandler();
-  }
+  hourEles.forEach((hourEle, index) => {
+    const timeEle = hourEle.querySelector(".hour-time");
+    const conditionEle = hourEle.querySelector(".hour-condition");
+    const temperatureEle = hourEle.querySelector(".hour-temperature");
+    timeEle.textContent = slicedHour(hourlyData[index].datetime);
+    conditionEle.textContent = hourlyData[index].conditions;
+    temperatureEle.textContent = `${hourlyData[index].temp}°`;
+  });
 };
