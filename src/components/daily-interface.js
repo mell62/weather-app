@@ -33,9 +33,9 @@ const dailyWeather = async function populateDailyWeather() {
       const minTemp = dailyEle.querySelector(".day-min");
       dayEle.textContent = formatDate(dailyData[index].datetime);
       conditionEle.textContent = dailyData[index].conditions;
-      temperatureEle.textContent = dailyData[index].temp;
-      maxTemp.textContent = dailyData[index].tempmax;
-      minTemp.textContent = dailyData[index].tempmin;
+      temperatureEle.textContent = `${dailyData[index].temp}°`;
+      maxTemp.textContent = `${dailyData[index].tempmax}°`;
+      minTemp.textContent = `${dailyData[index].tempmin}°`;
     });
     todayAndTomorrow();
   } catch {

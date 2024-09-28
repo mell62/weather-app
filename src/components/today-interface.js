@@ -1,5 +1,5 @@
 export { todaysWeather };
-import { fetchWeatherWhileLoading, errorHandler } from "./barrel";
+import { fetchWeatherWhileLoading, errorHandler, slicedHour } from "./barrel";
 
 const maxTempEle = document.querySelector(".max-temp");
 const minTempEle = document.querySelector(".min-temp");
@@ -14,17 +14,17 @@ const moonphaseEle = document.querySelector(".moonphase");
 
 const maxTemp = function populateMaxTemp(data) {
   const temperature = data.weekData[0].tempmax;
-  maxTempEle.textContent = `Max: ${temperature}`;
+  maxTempEle.textContent = `Max: ${temperature}°`;
 };
 
 const minTemp = function populateMinTemp(data) {
   const temperature = data.weekData[0].tempmin;
-  minTempEle.textContent = `Min: ${temperature}`;
+  minTempEle.textContent = `Min: ${temperature}°`;
 };
 
 const humidity = function populateHumidity(data) {
   const humidityMeasure = data.humidity;
-  humidityEle.textContent = `Humidity: ${humidityMeasure}`;
+  humidityEle.textContent = `Humidity: ${humidityMeasure}%`;
 };
 
 const windspeed = function populateWindspeed(data) {
@@ -39,22 +39,22 @@ const visibility = function populateVisibility(data) {
 
 const dew = function populateDew(data) {
   const dewMeasure = data.dew;
-  dewEle.textContent = `Dew: ${dewMeasure}`;
+  dewEle.textContent = `Dew: ${dewMeasure}°`;
 };
 
 const pressure = function populatePressure(data) {
   const pressureMeasure = data.pressure;
-  pressureEle.textContent = `Pressure: ${pressureMeasure}`;
+  pressureEle.textContent = `Pressure: ${pressureMeasure} hPa`;
 };
 
 const sunrise = function populateSunrise(data) {
   const sunriseTime = data.sunrise;
-  sunriseEle.textContent = `Sunrise: ${sunriseTime}`;
+  sunriseEle.textContent = `Sunrise: ${slicedHour(sunriseTime)}`;
 };
 
 const sunset = function populateSunset(data) {
   const sunsetTime = data.sunset;
-  sunsetEle.textContent = `Sunset: ${sunsetTime}`;
+  sunsetEle.textContent = `Sunset: ${slicedHour(sunsetTime)}`;
 };
 
 const moonphase = function populateMoonphase(data) {

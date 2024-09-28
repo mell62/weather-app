@@ -1,4 +1,4 @@
-export { hourlyWeather };
+export { hourlyWeather, slicedHour };
 import { errorHandler, fetchWeatherWhileLoading } from "./barrel";
 
 const hourEles = document.querySelectorAll(".hourly-item");
@@ -19,7 +19,7 @@ const hourlyWeather = async function populateHourlyWeather() {
       const temperatureEle = hourEle.querySelector(".hour-temperature");
       timeEle.textContent = slicedHour(hourlyData[index].datetime);
       conditionEle.textContent = hourlyData[index].conditions;
-      temperatureEle.textContent = hourlyData[index].temp;
+      temperatureEle.textContent = `${hourlyData[index].temp}°`;
     });
   } catch {
     errorHandler();
