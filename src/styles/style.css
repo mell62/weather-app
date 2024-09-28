@@ -1,10 +1,13 @@
 :root {
   --font-header-color-day: #094067;
+  --font-text: "Nunito", sans-serif;
+  --font-header: "Fredoka", sans-serif;
 }
 
 body {
   height: 100vh;
   padding: 2rem;
+  font-family: var(--font-text);
 }
 
 main {
@@ -84,6 +87,15 @@ header {
   border: 0.2rem solid black;
   width: max-content;
   height: max-content;
+}
+
+.current-header,
+.hourly-header,
+.todays-header,
+.daily-weather-header {
+  font-size: 1.5rem;
+  font-family: var(--font-header);
+  font-weight: 400;
 }
 
 .hourly-weather-container {
