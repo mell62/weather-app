@@ -12,6 +12,42 @@ const sunriseEle = document.querySelector(".sunrise");
 const sunsetEle = document.querySelector(".sunset");
 const moonphaseEle = document.querySelector(".moonphase");
 
+const stringifyMoonphase = function moonphaseStringifyer(moonphase) {
+  let moonphaseString;
+  if (moonphase === 0) {
+    moonphaseString = "New Moon";
+    return moonphaseString;
+  }
+  if (moonphase > 0 && moonphase < 0.25) {
+    moonphaseString = "Waxing Crescent";
+    return moonphaseString;
+  }
+  if (moonphase === 0.25) {
+    moonphaseString = "First Quarter";
+    return moonphaseString;
+  }
+  if (moonphase > 0.25 && moonphase < 0.5) {
+    moonphaseString = "Waxing Gibbous";
+    return moonphaseString;
+  }
+  if (moonphase === 0.5) {
+    moonphaseString = "Full Moon";
+    return moonphaseString;
+  }
+  if (moonphase > 0.5 && moonphase < 0.75) {
+    moonphaseString = "Waning Gibbous";
+    return moonphaseString;
+  }
+  if (moonphase === 0.75) {
+    moonphaseString = "Last Quarter";
+    return moonphaseString;
+  }
+  if (moonphase > 0.75 && moonphase < 1) {
+    moonphaseString = "Waning Crescent";
+    return moonphaseString;
+  }
+};
+
 const maxTemp = function populateMaxTemp(data) {
   const temperature = data.weekData[0].tempmax;
   maxTempEle.textContent = `Max: ${temperature}°`;
@@ -59,7 +95,7 @@ const sunset = function populateSunset(data) {
 
 const moonphase = function populateMoonphase(data) {
   const moonphaseMeasure = data.moonphase;
-  moonphaseEle.textContent = `Moonphase: ${moonphaseMeasure}`;
+  moonphaseEle.textContent = `Moonphase: ${stringifyMoonphase(moonphaseMeasure)}`;
 };
 
 const todaysWeather = async function populateTodaysWeather() {
