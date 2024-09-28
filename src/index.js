@@ -14,20 +14,18 @@ const locationForm = document.querySelector(".location-form");
 const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
 
+const populateData = async function dataPopulator() {
+  currentWeather();
+  hourlyWeather();
+  todaysWeather();
+  dailyWeather();
+};
+
 locationForm.addEventListener("submit", (event) => event.preventDefault());
-locationForm.addEventListener("submit", currentWeather);
-locationForm.addEventListener("submit", hourlyWeather);
-locationForm.addEventListener("submit", todaysWeather);
-locationForm.addEventListener("submit", dailyWeather);
+locationForm.addEventListener("submit", populateData);
 
 celsiusBtn.addEventListener("click", activateCelsius);
-celsiusBtn.addEventListener("click", currentWeather);
-celsiusBtn.addEventListener("click", hourlyWeather);
-celsiusBtn.addEventListener("click", todaysWeather);
-celsiusBtn.addEventListener("click", dailyWeather);
+celsiusBtn.addEventListener("click", populateData);
 
 fahrenheitBtn.addEventListener("click", activateFahrenheit);
-fahrenheitBtn.addEventListener("click", currentWeather);
-fahrenheitBtn.addEventListener("click", hourlyWeather);
-fahrenheitBtn.addEventListener("click", todaysWeather);
-fahrenheitBtn.addEventListener("click", dailyWeather);
+fahrenheitBtn.addEventListener("click", populateData);
