@@ -41,6 +41,7 @@ const weatherObj = async function makeWeatherObj(weatherData) {
     moonphase: weatherData.currentConditions.moonphase,
     hourlyData: weatherData.days[0].hours,
     weekData: weatherData.days.slice(0, 7),
+    time: weatherData.currentConditions.datetime,
   };
   return obj;
 };

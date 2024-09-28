@@ -9,3 +9,4 @@ export {
   activateFahrenheit,
   deriveUnit,
 } from "./unit-conversion";
+export { applyDayNightStyling } from "./day-night-interface";

@@ -1,13 +1,32 @@
 :root {
   --font-header-color-day: #094067;
+  --font-color-day: #5f6c7b;
+  --font-header-color-night: #fffffe;
+  --font-color-night: #94a1b2;
   --font-text: "Nunito", sans-serif;
   --font-header: "Fredoka", sans-serif;
+  --background-color-day: #fffffe;
+  --background-color-night: #16161a;
 }
 
 body {
   height: 100vh;
   padding: 2rem;
   font-family: var(--font-text);
+}
+
+button {
+  color: inherit;
+}
+
+.background-day {
+  background-color: var(--background-color-day);
+  color: var(--font-color-day);
+}
+
+.background-night {
+  background-color: var(--background-color-night);
+  color: var(--font-color-night);
 }
 
 main {
@@ -25,7 +44,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--font-header-color-day);
 }
 
 .logo-container {
@@ -55,7 +73,6 @@ header {
 .location-submit {
   border: none;
   background-color: transparent;
-  color: var(--font-header-color-day);
   cursor: pointer;
   font-size: large;
 }

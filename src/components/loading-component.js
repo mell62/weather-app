@@ -6,6 +6,7 @@ import {
   hourlyWeather,
   todaysWeather,
   dailyWeather,
+  applyDayNightStyling,
 } from "./barrel";
 
 const loadingEle = document.querySelector(".loading-interface");
@@ -26,6 +27,7 @@ const fetchWeatherWhileLoading = async function fetchWhileLoadingFunc() {
       hourlyWeather(),
       todaysWeather(),
       dailyWeather(),
+      applyDayNightStyling(),
     ]);
     disableLoading();
     removeError();
