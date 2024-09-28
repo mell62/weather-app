@@ -1,5 +1,10 @@
+:root {
+  --font-header-color-day: #094067;
+}
+
 body {
   height: 100vh;
+  padding: 2rem;
 }
 
 main {
@@ -7,6 +12,65 @@ main {
   flex-wrap: wrap;
   gap: 4rem;
   position: relative;
+}
+
+h1 {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--font-header-color-day);
+}
+
+.logo-container {
+  font-family: "Dosis", sans-serif;
+  display: flex;
+  align-items: end;
+  line-height: 1;
+}
+
+.logo-image {
+  width: 5rem;
+  height: auto;
+  fill: var(--font-header-color-day);
+}
+
+.logo-second-line {
+  color: #3da9fc;
+}
+
+.location-input {
+  padding: 0.5rem;
+  border: 0.2rem solid var(--font-header-color-day);
+  border-radius: 1rem;
+  width: 25rem;
+}
+
+.location-submit {
+  border: none;
+  background-color: transparent;
+  color: var(--font-header-color-day);
+  cursor: pointer;
+  font-size: large;
+}
+
+.unit-btn {
+  border: 0.2rem solid var(--font-header-color-day);
+  background-color: transparent;
+  padding: 0.3rem;
+}
+
+.celsius-btn {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.fahrenheit-btn {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .unit-btn-active {
