@@ -21,4 +21,13 @@ locationForm.addEventListener("submit", todaysWeather);
 locationForm.addEventListener("submit", dailyWeather);
 
 celsiusBtn.addEventListener("click", activateCelsius);
+celsiusBtn.addEventListener("click", currentWeather);
+celsiusBtn.addEventListener("click", hourlyWeather);
+celsiusBtn.addEventListener("click", todaysWeather);
+celsiusBtn.addEventListener("click", dailyWeather);
+
 fahrenheitBtn.addEventListener("click", activateFahrenheit);
+fahrenheitBtn.addEventListener("click", currentWeather);
+fahrenheitBtn.addEventListener("click", hourlyWeather);
+fahrenheitBtn.addEventListener("click", todaysWeather);
+fahrenheitBtn.addEventListener("click", dailyWeather);
