@@ -9,6 +9,10 @@ main {
   position: relative;
 }
 
+.unit-btn-active {
+  border: 2px solid black;
+}
+
 .current-weather-container,
 .hourly-weather-container,
 .todays-weather-container,
