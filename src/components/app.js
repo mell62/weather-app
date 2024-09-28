@@ -1,10 +1,11 @@
 export { weatherObj, searchLocation, errorHandler, removeError };
+import { deriveUnit } from "./barrel";
 
 const errorMsgEle = document.querySelector(".error-message");
 
-const weatherInfo = async function getWeatherInfo(location) {
+const weatherInfo = async function getWeatherInfo(location, unit) {
   const weatherResponse = await fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=JQDQF5KAWUVBQZVF6ETKE2VDC&contentType=json`,
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&key=JQDQF5KAWUVBQZVF6ETKE2VDC&contentType=json`,
   );
   if (!weatherResponse.ok) {
     console.log(`Error: ${weatherResponse.status}`);
@@ -47,8 +48,9 @@ const weatherObj = async function makeWeatherObj(weatherData) {
 const searchLocation = async function getLocation() {
   const locationInput = document.querySelector(".location-input");
   const location = locationInput.value;
+  const unit = deriveUnit();
   try {
-    const weatherData = await weatherInfo(location);
+    const weatherData = await weatherInfo(location, unit);
     const weatherDataObj = weatherObj(weatherData);
     return weatherDataObj;
   } catch {

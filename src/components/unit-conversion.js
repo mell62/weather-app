@@ -1,9 +1,10 @@
-export { activateCelsius, activateFahrenheit };
+export { activateCelsius, activateFahrenheit, deriveUnit };
 
 const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
 
 let celsiusActive = true;
+let unit;
 
 const unitBtnStyling = function applyUnitBtnStyling() {
   if (celsiusActive) {
@@ -23,4 +24,13 @@ const activateCelsius = function toggleCelsiusActive() {
 const activateFahrenheit = function toggleCelsiusInactive() {
   celsiusActive = false;
   unitBtnStyling();
+};
+
+const deriveUnit = function getCurrentUnit() {
+  if (celsiusActive) {
+    unit = "metric";
+  } else {
+    unit = "us";
+  }
+  return unit;
 };

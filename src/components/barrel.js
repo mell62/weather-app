@@ -4,4 +4,8 @@ export { hourlyWeather, slicedHour } from "./hourly-interface";
 export { todaysWeather } from "./today-interface";
 export { dailyWeather } from "./daily-interface";
 export { fetchWeatherWhileLoading } from "./loading-component";
-export { activateCelsius, activateFahrenheit } from "./unit-conversion";
+export {
+  activateCelsius,
+  activateFahrenheit,
+  deriveUnit,
+} from "./unit-conversion";
