@@ -1,5 +1,10 @@
 export { todaysWeather };
-import { fetchWeatherWhileLoading, errorHandler, slicedHour } from "./barrel";
+import {
+  fetchWeatherWhileLoading,
+  errorHandler,
+  slicedHour,
+  deriveUnit,
+} from "./barrel";
 
 const maxTempEle = document.querySelector(".max-temp");
 const minTempEle = document.querySelector(".min-temp");
@@ -11,6 +16,30 @@ const pressureEle = document.querySelector(".pressure");
 const sunriseEle = document.querySelector(".sunrise");
 const sunsetEle = document.querySelector(".sunset");
 const moonphaseEle = document.querySelector(".moonphase");
+let speedUnit;
+let distanceUnit;
+
+const getSpeedUnit = function getSpeedUnit() {
+  if (deriveUnit() === "metric") {
+    speedUnit = "kph";
+    return speedUnit;
+  }
+  if (deriveUnit() === "us") {
+    speedUnit = "mph";
+    return speedUnit;
+  }
+};
+
+const getDistanceUnit = function getDistanceUnit() {
+  if (deriveUnit() === "metric") {
+    distanceUnit = "km";
+    return distanceUnit;
+  }
+  if (deriveUnit() === "us") {
+    distanceUnit = "mi";
+    return distanceUnit;
+  }
+};
 
 const stringifyMoonphase = function moonphaseStringifyer(moonphase) {
   let moonphaseString;
@@ -60,17 +89,17 @@ const minTemp = function populateMinTemp(data) {
 
 const humidity = function populateHumidity(data) {
   const humidityMeasure = data.humidity;
-  humidityEle.textContent = `Humidity: ${humidityMeasure}%`;
+  humidityEle.textContent = `Humidity: ${humidityMeasure} %`;
 };
 
 const windspeed = function populateWindspeed(data) {
   const windspeedMeasure = data.windspeed;
-  windspeedEle.textContent = `Windspeed: ${windspeedMeasure}`;
+  windspeedEle.textContent = `Windspeed: ${windspeedMeasure} ${getSpeedUnit()}`;
 };
 
 const visibility = function populateVisibility(data) {
   const visibilityMeasure = data.visibility;
-  visibilityEle.textContent = `Visibility: ${visibilityMeasure}`;
+  visibilityEle.textContent = `Visibility: ${visibilityMeasure} ${getDistanceUnit()}`;
 };
 
 const dew = function populateDew(data) {
