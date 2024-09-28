@@ -13,6 +13,13 @@ const formatDate = function dateFormatter(dateString) {
   return formattedDate;
 };
 
+const todayAndTomorrow = function setTodayAndTomorrow() {
+  const todayEle = dailyEles[0].querySelector(".date");
+  const tomorrowEle = dailyEles[1].querySelector(".date");
+  todayEle.textContent = "Today";
+  tomorrowEle.textContent = "Tomorrow";
+};
+
 const dailyWeather = async function populateDailyWeather() {
   try {
     const weatherData = await fetchWeatherWhileLoading();
@@ -30,6 +37,7 @@ const dailyWeather = async function populateDailyWeather() {
       maxTemp.textContent = dailyData[index].tempmax;
       minTemp.textContent = dailyData[index].tempmin;
     });
+    todayAndTomorrow();
   } catch {
     errorHandler();
   }
