@@ -10,9 +10,13 @@ const unitBtnStyling = function applyUnitBtnStyling() {
   if (celsiusActive) {
     fahrenheitBtn.classList.remove("unit-btn-active");
     celsiusBtn.classList.add("unit-btn-active");
+    celsiusBtn.disabled = true;
+    fahrenheitBtn.disabled = false;
   } else {
     celsiusBtn.classList.remove("unit-btn-active");
     fahrenheitBtn.classList.add("unit-btn-active");
+    celsiusBtn.disabled = false;
+    fahrenheitBtn.disabled = true;
   }
 };
 
