@@ -1,12 +1,15 @@
 :root {
   --font-header-color-day: #094067;
   --font-color-day: #5f6c7b;
+  --background-color-day: #fffffe;
+  --day-primary: #3da9fc;
   --font-header-color-night: #fffffe;
   --font-color-night: #94a1b2;
+  --background-color-night: #16161a;
+  --night-primary: #7f5af0;
   --font-text: "Nunito", sans-serif;
   --font-header: "Fredoka", sans-serif;
-  --background-color-day: #fffffe;
-  --background-color-night: #16161a;
+  --btn-text: #fffffe;
 }
 
 body {
@@ -44,6 +47,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.header-elements-day {
+  border: 0.2rem solid var(--day-primary);
+}
+
+.header-elements-night {
+  border: 0.2rem solid var(--night-primary);
 }
 
 .logo-container {
@@ -63,38 +76,84 @@ header {
   color: #3da9fc;
 }
 
+.location-input-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .location-input {
   padding: 0.5rem;
-  border: 0.2rem solid var(--font-header-color-day);
   border-radius: 1rem;
-  width: 25rem;
+  width: clamp(15rem, 40vw, 40rem);
+  background-color: var(--background-color-day);
+  outline: none;
+  color: inherit;
 }
 
 .location-submit {
   border: none;
-  background-color: transparent;
   cursor: pointer;
-  font-size: large;
+  font-size: 1.2rem;
+  background-color: transparent;
+  transition: transform 0.1s ease-in-out;
+}
+
+.location-submit:hover {
+  transform: scale(1.1);
+}
+
+.unit-btns {
+  display: flex;
+  width: max-content;
 }
 
 .unit-btn {
-  border: 0.2rem solid var(--font-header-color-day);
   background-color: transparent;
-  padding: 0.3rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .celsius-btn {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
 
 .fahrenheit-btn {
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
-.unit-btn-active {
-  border: 2px solid black;
+.unit-btn-day {
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+.unit-btn-night {
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+.unit-btn-day:hover {
+  background-color: var(--day-primary);
+  color: var(--btn-text);
+}
+
+.unit-btn-night:hover {
+  background-color: var(--night-primary);
+  color: var(--btn-text);
+}
+
+.unit-btn-active-day {
+  background-color: var(--day-primary);
+  color: var(--btn-text);
+}
+
+.unit-btn-active-night {
+  background-color: var(--night-primary);
+  color: var(--btn-text);
 }
 
 .current-weather-container,
