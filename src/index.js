@@ -11,6 +11,8 @@ const locationForm = document.querySelector(".location-form");
 const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
 
+fetchWeatherWhileLoading();
+
 locationForm.addEventListener("submit", (event) => event.preventDefault());
 locationForm.addEventListener("submit", fetchWeatherWhileLoading);
 

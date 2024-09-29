@@ -48,7 +48,7 @@ const weatherObj = async function makeWeatherObj(weatherData) {
 
 const searchLocation = async function getLocation() {
   const locationInput = document.querySelector(".location-input");
-  const location = locationInput.value;
+  const location = locationInput.value || "London";
   const unit = deriveUnit();
   try {
     const weatherData = await weatherInfo(location, unit);
