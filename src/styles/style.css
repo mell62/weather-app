@@ -51,12 +51,12 @@ header {
   padding-bottom: 2rem;
 }
 
-.header-elements-day {
-  border: 0.2rem solid var(--day-primary);
+.location-submit-day {
+  color: var(--font-header-color-day);
 }
 
-.header-elements-night {
-  border: 0.2rem solid var(--night-primary);
+.location-submit-night {
+  color: var(--font-header-color-night);
 }
 
 .logo-container {
@@ -106,6 +106,24 @@ header {
   color: inherit;
 }
 
+.location-input-day {
+  border: 0.15rem solid var(--font-header-color-day);
+  transition: 0.1s border ease-in-out;
+}
+
+.location-input-night {
+  border: 0.15rem solid var(--font-header-color-night);
+  transition: 0.1s border ease-in-out;
+}
+
+.location-input-day:focus {
+  border: 0.15rem solid var(--day-primary);
+}
+
+.location-input-night:focus {
+  border: 0.15rem solid var(--night-primary);
+}
+
 .location-submit {
   border: none;
   cursor: pointer;
@@ -140,12 +158,16 @@ header {
 }
 
 .unit-btn-day {
+  border: 0.2rem solid var(--day-primary);
+
   transition:
     background-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
 }
 
 .unit-btn-night {
+  border: 0.2rem solid var(--night-primary);
+
   transition:
     background-color 0.2s ease-in-out,
     color 0.2s ease-in-out;

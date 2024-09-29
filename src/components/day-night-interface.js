@@ -3,6 +3,7 @@ import { searchLocation } from "./barrel";
 
 const bodyEle = document.querySelector("body");
 const locationInput = document.querySelector(".location-input");
+const locationSubmit = document.querySelector(".location-submit");
 const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
 const heroLogoImg = document.querySelector(".logo-image");
@@ -66,13 +67,17 @@ const applyHeroLogoNightStyling = function applyHeroLogoNightStyling() {
 };
 
 const applyLocationFormDayStyling = function applyLocationFormDayStyling() {
-  locationInput.classList.add("header-elements-day");
-  locationInput.classList.remove("header-elements-night");
+  locationInput.classList.add("location-input-day");
+  locationInput.classList.remove("location-input-night");
+  locationSubmit.classList.add("location-submit-day");
+  locationSubmit.classList.remove("location-submit-night");
 };
 
 const applyLocationFormNightStyling = function applyLocationFormNightStyling() {
-  locationInput.classList.add("header-elements-night");
-  locationInput.classList.remove("header-elements-day");
+  locationInput.classList.add("location-input-night");
+  locationInput.classList.remove("location-input-day");
+  locationSubmit.classList.add("location-submit-night");
+  locationSubmit.classList.remove("location-submit-day");
 };
 
 const applyUnitBtnDayStyling = function applyHeaderDayStyling() {
