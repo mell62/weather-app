@@ -39,16 +39,20 @@ main {
   position: relative;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+}
+
 h1 {
   margin: 0;
 }
 
-header {
+.hero-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  padding-bottom: 2rem;
 }
 
 .logo-container {
@@ -83,10 +87,17 @@ header {
   color: #3da9fc;
 }
 
+.location-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .location-input-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
+  height: 2.5rem;
 }
 
 .location-input {
@@ -134,6 +145,11 @@ header {
 
 .location-submit-night {
   color: var(--font-header-color-night);
+}
+
+.error-message {
+  height: 2.5rem;
+  align-self: center;
 }
 
 .unit-btns {
