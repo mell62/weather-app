@@ -224,9 +224,23 @@ h1 {
 .hourly-weather-container,
 .todays-weather-container,
 .daily-weather-container {
-  border: 0.2rem solid black;
   width: max-content;
   height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.current-weather-details,
+.hourly-items-container,
+.todays-weather-details,
+.daily-items-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.current-weather-details {
+  flex-direction: column;
 }
 
 .current-header,
