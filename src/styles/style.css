@@ -69,7 +69,22 @@ header {
 .logo-image {
   width: 5rem;
   height: auto;
+}
+
+.logo-image-day {
   fill: var(--font-header-color-day);
+}
+
+.logo-image-night {
+  fill: var(--font-header-color-night);
+}
+
+.logo-first-line-day {
+  color: var(--font-header-color-day);
+}
+
+.logo-first-line-night {
+  color: var(--font-header-color-night);
 }
 
 .logo-second-line {

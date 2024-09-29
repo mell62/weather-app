@@ -5,6 +5,8 @@ const bodyEle = document.querySelector("body");
 const locationInput = document.querySelector(".location-input");
 const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
+const heroLogoImg = document.querySelector(".logo-image");
+const heroLogoText = document.querySelector(".logo-first-line");
 
 const dateConverter = function convertToDate(time) {
   const [hours, minutes, seconds] = time.split(":").map(Number);
@@ -28,10 +30,12 @@ const applyDayNightStyling = async function applyDayNightStyling() {
 
   if (ifDaytime(currentTime, sunrise, sunset)) {
     applyBodyDayStyling();
+    applyHeroLogoDayStyling();
     applyLocationFormDayStyling();
     applyUnitBtnDayStyling();
   } else {
     applyBodyNightStyling();
+    applyHeroLogoNightStyling();
     applyLocationFormNightStyling();
     applyUnitBtnNightStyling();
   }
@@ -45,6 +49,20 @@ const applyBodyDayStyling = function applyBodyDayStyling() {
 const applyBodyNightStyling = function applyBodyNightStyling() {
   bodyEle.classList.add("background-night");
   bodyEle.classList.remove("background-day");
+};
+
+const applyHeroLogoDayStyling = function applyHeroLogoDayStyling() {
+  heroLogoImg.classList.add("logo-image-day");
+  heroLogoImg.classList.remove("logo-image-night");
+  heroLogoText.classList.add("logo-first-like-day");
+  heroLogoText.classList.remove("logo-first-line-night");
+};
+
+const applyHeroLogoNightStyling = function applyHeroLogoNightStyling() {
+  heroLogoImg.classList.add("logo-image-night");
+  heroLogoImg.classList.remove("logo-image-day");
+  heroLogoText.classList.add("logo-first-line-night");
+  heroLogoText.classList.remove("logo-first-line-day");
 };
 
 const applyLocationFormDayStyling = function applyLocationFormDayStyling() {
