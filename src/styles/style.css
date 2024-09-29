@@ -17,7 +17,7 @@ body {
   height: 100vh;
   padding: 2rem;
   font-family: var(--font-text);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 button {
@@ -258,6 +258,7 @@ h1 {
 .todays-weather-details,
 .daily-items-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
@@ -311,6 +312,23 @@ h1 {
 
 .todays-header-night {
   color: var(--font-header-color-night);
+}
+
+.todays-weather-details {
+  column-gap: 5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.weather-attribute {
+  display: flex;
+  align-items: center;
+  width: 15rem;
+}
+
+.today-icon {
+  width: 3rem;
+  height: auto;
 }
 
 .daily-weather-header-day {
