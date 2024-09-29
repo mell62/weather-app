@@ -24,7 +24,7 @@
             height="800px"
             viewBox="0 0 512 512"
             xml:space="preserve"
-            class="logo-image"
+            class="logo-image logo-image-day"
           >
             <g>
               <path
@@ -88,7 +88,9 @@
             </g>
           </svg>
           <div class="logo-text-container">
-            <h1 class="logo-first-line logo-text">WEATHER</h1>
+            <h1 class="logo-first-line logo-first-line-day logo-text">
+              WEATHER
+            </h1>
             <h1 class="logo-second-line logo-text">SLEUTH</h1>
           </div>
         </div>
@@ -96,19 +98,24 @@
           <div class="location-input-container">
             <input
               type="text"
-              class="location-input"
+              class="location-input location-input-day"
               id="location-input"
               name="location"
               placeholder="Provide a location..."
             />
-            <button type="submit" class="location-submit">Deduce</button>
+            <button type="submit" class="location-submit location-submit-day">
+              Deduce
+            </button>
           </div>
           <div class="error-message"></div>
         </form>
         <div class="unit-btns">
-          <button class="celsius-btn unit-btn unit-btn-active" disabled>
+          <button
+            class="celsius-btn unit-btn unit-btn-active unit-btn-day"
+            disabled
+          >
             °C KPH</button
-          ><button class="fahrenheit-btn unit-btn">°F MPH</button>
+          ><button class="fahrenheit-btn unit-btn unit-btn-day">°F MPH</button>
         </div>
       </header>
       <main class="parent-container">

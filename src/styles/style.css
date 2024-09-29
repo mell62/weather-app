@@ -51,14 +51,6 @@ header {
   padding-bottom: 2rem;
 }
 
-.location-submit-day {
-  color: var(--font-header-color-day);
-}
-
-.location-submit-night {
-  color: var(--font-header-color-night);
-}
-
 .logo-container {
   font-family: "Dosis", sans-serif;
   display: flex;
@@ -134,6 +126,14 @@ header {
 
 .location-submit:hover {
   transform: scale(1.1);
+}
+
+.location-submit-day {
+  color: var(--font-header-color-day);
+}
+
+.location-submit-night {
+  color: var(--font-header-color-night);
 }
 
 .unit-btns {
