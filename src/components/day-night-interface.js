@@ -8,6 +8,7 @@ const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
 const heroLogoImg = document.querySelector(".logo-image");
 const heroLogoText = document.querySelector(".logo-first-line");
+const errorMsgEle = document.querySelector(".error-message");
 
 const dateConverter = function convertToDate(time) {
   const [hours, minutes, seconds] = time.split(":").map(Number);
@@ -34,11 +35,13 @@ const applyDayNightStyling = async function applyDayNightStyling() {
     applyHeroLogoDayStyling();
     applyLocationFormDayStyling();
     applyUnitBtnDayStyling();
+    applyErrorMsgDayStyling();
   } else {
     applyBodyNightStyling();
     applyHeroLogoNightStyling();
     applyLocationFormNightStyling();
     applyUnitBtnNightStyling();
+    applyErrorMsgNightStyling();
   }
 };
 
@@ -128,4 +131,14 @@ const applyUnitBtnNightStyling = function applyHeaderNightStyling() {
     celsiusBtn.classList.remove("unit-btn-active-day");
     fahrenheitBtn.classList.remove("unit-btn-active-day");
   }
+};
+
+const applyErrorMsgDayStyling = function applyErrorMsgDayStyling() {
+  errorMsgEle.classList.add("error-message-day");
+  errorMsgEle.classList.remove("error-message-night");
+};
+
+const applyErrorMsgNightStyling = function applyErrorMsgNightStyling() {
+  errorMsgEle.classList.add("error-message-night");
+  errorMsgEle.classList.remove("error-message-day");
 };

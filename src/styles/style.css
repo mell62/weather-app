@@ -7,7 +7,7 @@
   --font-color-night: #94a1b2;
   --background-color-night: #16161a;
   --night-primary: #7f5af0;
-  --font-text: "Nunito", sans-serif;
+  --font-text: "Josefin Sans", sans-serif;
   --font-header: "Fredoka", sans-serif;
   --btn-text: #fffffe;
 }
@@ -16,6 +16,7 @@ body {
   height: 100vh;
   padding: 2rem;
   font-family: var(--font-text);
+  font-size: 1.1rem;
 }
 
 button {
@@ -37,6 +38,7 @@ main {
   flex-wrap: wrap;
   gap: 4rem;
   position: relative;
+  padding-top: 1rem;
 }
 
 header {
@@ -95,7 +97,6 @@ h1 {
 .location-input-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
   height: 2.5rem;
 }
@@ -145,11 +146,6 @@ h1 {
 
 .location-submit-night {
   color: var(--font-header-color-night);
-}
-
-.error-message {
-  height: 2.5rem;
-  align-self: center;
 }
 
 .unit-btns {
@@ -207,6 +203,21 @@ h1 {
 .unit-btn-active-night {
   background-color: var(--night-primary);
   color: var(--btn-text);
+}
+
+.error-message {
+  height: 2.5rem;
+  align-self: center;
+  margin-top: 2rem;
+  min-width: 25rem;
+}
+
+.error-message-day {
+  color: var(--font-header-color-day);
+}
+
+.error-message-night {
+  color: var(--font-header-color-night);
 }
 
 .current-weather-container,
