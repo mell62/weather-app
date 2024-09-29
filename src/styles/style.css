@@ -262,6 +262,11 @@ h1 {
   gap: 0.5rem;
 }
 
+.weather-attribute {
+  display: flex;
+  align-items: center;
+}
+
 .current-condition-row {
   display: flex;
 }
@@ -320,15 +325,14 @@ h1 {
   padding: 1rem 0;
 }
 
-.weather-attribute {
-  display: flex;
-  align-items: center;
-  width: 15rem;
+.today-icon {
+  width: 4rem;
+  height: auto;
 }
 
-.today-icon {
-  width: 3rem;
-  height: auto;
+.today-attribute {
+  width: 15rem;
+  justify-content: center;
 }
 
 .daily-weather-header-day {
