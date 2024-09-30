@@ -70,11 +70,11 @@ h1 {
   height: auto;
 }
 
-.logo-image-day {
+.weather-icon-day {
   fill: var(--font-header-color-day);
 }
 
-.logo-image-night {
+.weather-icon-night {
   fill: var(--font-header-color-night);
 }
 
@@ -234,14 +234,6 @@ h1 {
   font-weight: 400;
 }
 
-.current-header-day {
-  color: var(--font-header-color-day);
-}
-
-.current-header-night {
-  color: var(--font-header-color-night);
-}
-
 .current-weather-text,
 .hourly-weather-container,
 .todays-weather-container,
@@ -260,6 +252,22 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.current-weather-container {
+  height: max-content;
+}
+
+.hourly-items-container {
+  flex-wrap: nowrap;
+}
+
+.weather-header-day {
+  color: var(--font-header-color-day);
+}
+
+.weather-header-night {
+  color: var(--font-header-color-night);
 }
 
 .weather-attribute {
@@ -282,14 +290,6 @@ h1 {
   height: auto;
 }
 
-.current-weather-icon-day {
-  fill: var(--font-header-color-day);
-}
-
-.current-weather-icon-night {
-  fill: var(--font-header-color-night);
-}
-
 .current-weather-details {
   flex-direction: column;
 }
@@ -299,24 +299,8 @@ h1 {
   overflow-x: auto;
 }
 
-.hourly-header-day {
-  color: var(--font-header-color-day);
-}
-
-.hourly-header-night {
-  color: var(--font-header-color-night);
-}
-
 .hourly-items-container {
   display: flex;
-}
-
-.todays-header-day {
-  color: var(--font-header-color-day);
-}
-
-.todays-header-night {
-  color: var(--font-header-color-night);
 }
 
 .todays-weather-details {
@@ -333,14 +317,6 @@ h1 {
 .today-attribute {
   width: 15rem;
   justify-content: center;
-}
-
-.daily-weather-header-day {
-  color: var(--font-header-color-day);
-}
-
-.daily-weather-header-night {
-  color: var(--font-header-color-night);
 }
 
 .loading-interface {

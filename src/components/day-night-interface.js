@@ -6,10 +6,11 @@ const locationInput = document.querySelector(".location-input");
 const locationSubmit = document.querySelector(".location-submit");
 const celsiusBtn = document.querySelector(".celsius-btn");
 const fahrenheitBtn = document.querySelector(".fahrenheit-btn");
-const heroLogoImg = document.querySelector(".logo-image");
 const heroLogoText = document.querySelector(".logo-first-line");
 const errorMsgEle = document.querySelector(".error-message");
 const loadingInterface = document.querySelector(".loading-interface");
+const headers = document.querySelectorAll(".weather-header");
+const icons = document.querySelectorAll(".weather-icon");
 
 const dateConverter = function convertToDate(time) {
   const [hours, minutes, seconds] = time.split(":").map(Number);
@@ -38,6 +39,8 @@ const applyDayNightStyling = async function applyDayNightStyling() {
     applyLocationFormDayStyling();
     applyUnitBtnDayStyling();
     applyErrorMsgDayStyling();
+    applyHeaderDayStyling();
+    applyIconsDayStyling();
   } else {
     applyLoadingNightStyling();
     applyBodyNightStyling();
@@ -45,6 +48,8 @@ const applyDayNightStyling = async function applyDayNightStyling() {
     applyLocationFormNightStyling();
     applyUnitBtnNightStyling();
     applyErrorMsgNightStyling();
+    applyHeaderNightStyling();
+    applyIconsNightStyling();
   }
 };
 
@@ -59,15 +64,11 @@ const applyBodyNightStyling = function applyBodyNightStyling() {
 };
 
 const applyHeroLogoDayStyling = function applyHeroLogoDayStyling() {
-  heroLogoImg.classList.add("logo-image-day");
-  heroLogoImg.classList.remove("logo-image-night");
-  heroLogoText.classList.add("logo-first-like-day");
+  heroLogoText.classList.add("logo-first-line-day");
   heroLogoText.classList.remove("logo-first-line-night");
 };
 
 const applyHeroLogoNightStyling = function applyHeroLogoNightStyling() {
-  heroLogoImg.classList.add("logo-image-night");
-  heroLogoImg.classList.remove("logo-image-day");
   heroLogoText.classList.add("logo-first-line-night");
   heroLogoText.classList.remove("logo-first-line-day");
 };
@@ -154,4 +155,32 @@ const applyLoadingDayStyling = function applyLoadingDayStyling() {
 const applyLoadingNightStyling = function applyLoadingNightStyling() {
   loadingInterface.classList.add("loading-interface-night");
   loadingInterface.classList.remove("loading-interface-day");
+};
+
+const applyHeaderDayStyling = function applyHeaderDayStyling() {
+  headers.forEach((header) => {
+    header.classList.add("weather-header-day");
+    header.classList.remove("weather-header-night");
+  });
+};
+
+const applyHeaderNightStyling = function applyHeaderNightStyling() {
+  headers.forEach((header) => {
+    header.classList.add("weather-header-night");
+    header.classList.remove("weather-header-day");
+  });
+};
+
+const applyIconsDayStyling = function applyIconsDayStyling() {
+  icons.forEach((icon) => {
+    icon.classList.add("weather-icon-day");
+    icon.classList.remove("weather-icon-night");
+  });
+};
+
+const applyIconsNightStyling = function applyIconsNightStyling() {
+  icons.forEach((icon) => {
+    icon.classList.add("weather-icon-night");
+    icon.classList.remove("weather-icon-day");
+  });
 };
