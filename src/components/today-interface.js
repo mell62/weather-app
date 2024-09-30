@@ -119,7 +119,7 @@ const sunset = function populateSunset(data) {
 
 const moonphase = function populateMoonphase(data) {
   const moonphaseMeasure = data.moonphase;
-  moonphaseEle.textContent = `Moonphase: ${stringifyMoonphase(moonphaseMeasure)}`;
+  moonphaseEle.textContent = `${stringifyMoonphase(moonphaseMeasure)}`;
 };
 
 const todaysWeather = async function populateTodaysWeather() {
