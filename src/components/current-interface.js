@@ -18,12 +18,12 @@ const currentCondition = function populateCurrentCondition(data) {
 
 const currentTemperature = function populateCurrentTemperature(data) {
   const temperature = data.temperature;
-  currentTemperatureEle.textContent = `${temperature}°`;
+  currentTemperatureEle.textContent = `, ${temperature}°`;
 };
 
 const currentFeelslike = function populateCurrentFeelslike(data) {
   const feelslike = data.feelslike;
-  currentFeelslikeEle.textContent = `Feelslike: ${feelslike}°`;
+  currentFeelslikeEle.textContent = `Feelslike ${feelslike}°`;
 };
 
 const currentWeather = async function populateCurrentWeather() {
