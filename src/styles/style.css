@@ -351,11 +351,10 @@ h1 {
   display: none;
 }
 
-/* 
-.loading-interface-night {
+.loading-interface-day {
   background-color: var(--background-color-day);
 }
 
 .loading-interface-night {
   background-color: var(--background-color-night);
-} */
+}
