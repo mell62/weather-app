@@ -10,7 +10,6 @@ const heroLogoText = document.querySelector(".logo-first-line");
 const errorMsgEle = document.querySelector(".error-message");
 const loadingInterface = document.querySelector(".loading-interface");
 const headers = document.querySelectorAll(".weather-header");
-const icons = document.querySelectorAll(".weather-icon");
 
 const dateConverter = function convertToDate(time) {
   const [hours, minutes, seconds] = time.split(":").map(Number);
@@ -172,6 +171,8 @@ const applyHeaderNightStyling = function applyHeaderNightStyling() {
 };
 
 const applyIconsDayStyling = function applyIconsDayStyling() {
+  const icons = document.querySelectorAll(".weather-icon");
+
   icons.forEach((icon) => {
     icon.classList.add("weather-icon-day");
     icon.classList.remove("weather-icon-night");
@@ -179,7 +180,9 @@ const applyIconsDayStyling = function applyIconsDayStyling() {
 };
 
 const applyIconsNightStyling = function applyIconsNightStyling() {
+  const icons = document.querySelectorAll(".weather-icon");
   icons.forEach((icon) => {
+    console.log(icon);
     icon.classList.add("weather-icon-night");
     icon.classList.remove("weather-icon-day");
   });
