@@ -284,6 +284,7 @@ main {
 
 .current-condition-row {
   display: flex;
+  text-wrap: nowrap;
 }
 
 .current-location,
