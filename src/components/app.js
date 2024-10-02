@@ -7,24 +7,24 @@ let cachedWeatherData = {};
 let cachedTime = {};
 const cacheDuration = 10 * 60 * 1000;
 
-const cachedData = function getCachedData(location) {
+const cachedData = function getCachedData(location, unit) {
   if (
-    cachedWeatherData[location] &&
-    Date.now() - cachedTime[location] < cacheDuration
+    cachedWeatherData[`${location}-${unit}`] &&
+    Date.now() - cachedTime[`${location}-${unit}`] < cacheDuration
   ) {
     return true;
   }
   return false;
 };
 
-const storeCacheData = function storeCacheData(location, data) {
-  cachedWeatherData[location] = data;
-  cachedTime[location] = Date.now();
+const storeCacheData = function storeCacheData(location, unit, data) {
+  cachedWeatherData[`${location}-${unit}`] = data;
+  cachedTime[`${location}-${unit}`] = Date.now();
 };
 
 const weatherInfo = async function getWeatherInfo(location, unit) {
-  if (cachedData(location)) {
-    return cachedWeatherData[location];
+  if (cachedData(location, unit)) {
+    return cachedWeatherData[`${location}-${unit}`];
   }
   const weatherResponse = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&iconSet=icons2&key=JQDQF5KAWUVBQZVF6ETKE2VDC&contentType=json`,
@@ -33,7 +33,7 @@ const weatherInfo = async function getWeatherInfo(location, unit) {
     console.log(`Error: ${weatherResponse.status}`);
   }
   const weatherData = await weatherResponse.json();
-  storeCacheData(location, weatherData);
+  storeCacheData(location, unit, weatherData);
   return weatherData;
 };
 
