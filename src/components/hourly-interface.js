@@ -9,8 +9,6 @@ const slicedHour = function sliceHour(hour) {
 };
 
 const hourlyIcon = function returnHourlyIcon(data) {
-  console.log(data);
-
   const icon = data.icon;
   return getHourlyIcon(icon);
 };
@@ -18,7 +16,6 @@ const hourlyIcon = function returnHourlyIcon(data) {
 const hourlyWeather = async function populateHourlyWeather() {
   const weatherData = await searchLocation();
   const hourlyData = weatherData.hourlyData;
-  console.log(hourlyData);
 
   hourEles.forEach((hourEle, index) => {
     const timeEle = hourEle.querySelector(".hour-time");

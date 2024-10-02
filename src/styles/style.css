@@ -34,14 +34,6 @@ button {
   color: var(--font-color-night);
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  position: relative;
-  padding: 1rem 5rem;
-}
-
 header {
   display: flex;
   flex-direction: column;
@@ -221,6 +213,21 @@ h1 {
   color: var(--font-header-color-night);
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  position: relative;
+  padding: 1rem 5rem;
+}
+
+.parent-first-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
 .current-weather-container {
   display: flex;
 }
@@ -253,7 +260,13 @@ h1 {
 }
 
 .current-weather-container {
-  height: max-content;
+  width: calc(35% - 2rem);
+  min-width: 20rem;
+}
+
+.hourly-weather-container {
+  width: calc(65% - 2rem);
+  min-width: 20rem;
 }
 
 .weather-header-day {
@@ -288,14 +301,10 @@ h1 {
   flex-direction: column;
 }
 
-.hourly-weather-container {
-  width: 60rem;
-  overflow-x: auto;
-}
-
 .hourly-items-container {
   flex-wrap: nowrap;
   gap: 0rem;
+  overflow-x: auto;
 }
 
 .hourly-item {
@@ -317,7 +326,7 @@ h1 {
 }
 
 .hourly-icon {
-  width: 3rem;
+  width: 4rem;
   height: auto;
 }
 
