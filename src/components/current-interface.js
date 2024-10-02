@@ -1,10 +1,11 @@
 export { currentWeather };
-import { searchLocation } from "./barrel";
+import { searchLocation, getCurrentIcon } from "./barrel";
 
 const locationEle = document.querySelector(".current-location");
 const currentConditionEle = document.querySelector(".current-condition");
 const currentTemperatureEle = document.querySelector(".current-temperature");
 const currentFeelslikeEle = document.querySelector(".current-feelslike");
+const currentIconEle = document.querySelector(".current-icon-container");
 
 const currentLocation = function populateCurrentLocation(data) {
   const location = data.location;
@@ -26,10 +27,16 @@ const currentFeelslike = function populateCurrentFeelslike(data) {
   currentFeelslikeEle.textContent = `Feelslike ${feelslike}°`;
 };
 
+const currentWeatherIcon = function populateCurrentWeatherIcon(data) {
+  const icon = data.icon;
+  currentIconEle.innerHTML = getCurrentIcon(icon);
+};
+
 const currentWeather = async function populateCurrentWeather() {
   const weatherData = await searchLocation();
   currentLocation(weatherData);
   currentCondition(weatherData);
   currentTemperature(weatherData);
   currentFeelslike(weatherData);
+  currentWeatherIcon(weatherData);
 };
