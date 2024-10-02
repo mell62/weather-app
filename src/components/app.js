@@ -33,7 +33,6 @@ const weatherInfo = async function getWeatherInfo(location, unit) {
     console.log(`Error: ${weatherResponse.status}`);
   }
   const weatherData = await weatherResponse.json();
-  console.log(weatherData);
   storeCacheData(location, weatherData);
   return weatherData;
 };
@@ -47,7 +46,7 @@ const removeError = function stopDisplayError() {
   errorMsgEle.textContent = "";
 };
 
-const weatherObj = async function makeWeatherObj(weatherData) {
+const weatherObj = function makeWeatherObj(weatherData) {
   const obj = {
     location: weatherData.resolvedAddress,
     condition: weatherData.currentConditions.conditions,
@@ -73,7 +72,7 @@ const weatherObj = async function makeWeatherObj(weatherData) {
 
 const searchLocation = async function getLocation() {
   const locationInput = document.querySelector(".location-input");
-  const location = locationInput.value.toLowerCase() || "London";
+  const location = locationInput.value.toLowerCase() || "london";
   const unit = deriveUnit();
   try {
     const weatherData = await weatherInfo(location, unit);
