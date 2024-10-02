@@ -319,6 +319,16 @@ main {
   transition: background-color 0.2s ease-in-out;
   padding: 0.5rem;
   border-radius: 0.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.hourly-item-day:hover {
+  background-color: #eff0f3;
+}
+
+.hourly-item-night:hover {
+  background-color: #34343d;
 }
 
 .hour-condition {

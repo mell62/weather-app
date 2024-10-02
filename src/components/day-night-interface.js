@@ -10,6 +10,7 @@ const heroLogoText = document.querySelector(".logo-first-line");
 const errorMsgEle = document.querySelector(".error-message");
 const loadingInterface = document.querySelector(".loading-interface");
 const headers = document.querySelectorAll(".weather-header");
+const hourlyItems = document.querySelectorAll(".hourly-item");
 
 const dateConverter = function convertToDate(time) {
   const [hours, minutes, seconds] = time.split(":").map(Number);
@@ -39,6 +40,7 @@ const applyDayNightStyling = async function applyDayNightStyling() {
     applyUnitBtnDayStyling();
     applyErrorMsgDayStyling();
     applyHeaderDayStyling();
+    applyHourlyItemsDayStyling();
     applyIconsDayStyling();
   } else {
     applyLoadingNightStyling();
@@ -48,6 +50,7 @@ const applyDayNightStyling = async function applyDayNightStyling() {
     applyUnitBtnNightStyling();
     applyErrorMsgNightStyling();
     applyHeaderNightStyling();
+    applyHourlyItemsNightStyling();
     applyIconsNightStyling();
   }
 };
@@ -167,6 +170,20 @@ const applyHeaderNightStyling = function applyHeaderNightStyling() {
   headers.forEach((header) => {
     header.classList.add("weather-header-night");
     header.classList.remove("weather-header-day");
+  });
+};
+
+const applyHourlyItemsDayStyling = function applyHourlyItemsDayStyling() {
+  hourlyItems.forEach((hourlyItem) => {
+    hourlyItem.classList.add("hourly-item-day");
+    hourlyItem.classList.remove("hourly-item-night");
+  });
+};
+
+const applyHourlyItemsNightStyling = function applyHourlyItemsNightStyling() {
+  hourlyItems.forEach((hourlyItem) => {
+    hourlyItem.classList.add("hourly-item-night");
+    hourlyItem.classList.remove("hourly-item-day");
   });
 };
 
