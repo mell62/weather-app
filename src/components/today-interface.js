@@ -1,5 +1,10 @@
 export { todaysWeather };
-import { searchLocation, slicedHour, deriveUnit } from "./barrel";
+import {
+  searchLocation,
+  slicedHour,
+  deriveUnit,
+  getMoonphaseIcon,
+} from "./barrel";
 
 const maxTempEle = document.querySelector(".max-temp");
 const minTempEle = document.querySelector(".min-temp");
@@ -10,6 +15,9 @@ const dewEle = document.querySelector(".dew");
 const pressureEle = document.querySelector(".pressure");
 const sunriseEle = document.querySelector(".sunrise");
 const sunsetEle = document.querySelector(".sunset");
+const moonphaseContainerEle = document.querySelector(
+  ".moonphase-icon-container",
+);
 const moonphaseEle = document.querySelector(".moonphase");
 let speedUnit;
 let distanceUnit;
@@ -117,6 +125,12 @@ const sunset = function populateSunset(data) {
   sunsetEle.textContent = `Sunset: ${slicedHour(sunsetTime)}`;
 };
 
+const moonphaseIcon = function populateMoonPhaseIcon(data) {
+  const moonphaseMeasure = data.moonphase;
+  const moonphaseMeasureString = stringifyMoonphase(moonphaseMeasure);
+  moonphaseContainerEle.innerHTML = getMoonphaseIcon(moonphaseMeasureString);
+};
+
 const moonphase = function populateMoonphase(data) {
   const moonphaseMeasure = data.moonphase;
   moonphaseEle.textContent = `${stringifyMoonphase(moonphaseMeasure)}`;
@@ -133,5 +147,6 @@ const todaysWeather = async function populateTodaysWeather() {
   pressure(weatherData);
   sunrise(weatherData);
   sunset(weatherData);
+  moonphaseIcon(weatherData);
   moonphase(weatherData);
 };

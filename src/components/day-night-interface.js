@@ -172,7 +172,6 @@ const applyHeaderNightStyling = function applyHeaderNightStyling() {
 
 const applyIconsDayStyling = function applyIconsDayStyling() {
   const icons = document.querySelectorAll(".weather-icon");
-
   icons.forEach((icon) => {
     icon.classList.add("weather-icon-day");
     icon.classList.remove("weather-icon-night");
