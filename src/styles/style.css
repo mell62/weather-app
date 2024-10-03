@@ -381,14 +381,21 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   background-color: var(--background-color-day);
   display: none;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 4rem;
 }
 
 .loading-interface-day {
   background-color: var(--background-color-day);
+  color: var(--font-header-color-day);
 }
 
 .loading-interface-night {
   background-color: var(--background-color-night);
+  color: var(--font-header-color-night);
 }
