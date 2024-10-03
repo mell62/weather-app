@@ -6,6 +6,7 @@ export { getHourlyIcon } from "./hourly-icon-interface";
 export { todaysWeather } from "./today-interface";
 export { getMoonphaseIcon } from "./moonphase-icon-interface";
 export { dailyWeather } from "./daily-interface";
+export { getDailyIcon } from "./daily-icon-interface";
 export { fetchWeatherWhileLoading } from "./loading-component";
 export {
   activateCelsius,
