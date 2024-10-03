@@ -266,7 +266,7 @@ main {
 
 .hourly-weather-container {
   width: calc(65% - 2rem);
-  min-width: 20rem;
+  min-width: 40rem;
 }
 
 .weather-header-day {
