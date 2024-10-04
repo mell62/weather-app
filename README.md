@@ -29,4 +29,4 @@ Check it out :point_right:[here!](https://mell62.github.io/weather-app/):point_l
 ## :page_with_curl: Note
 
 - Modern normalize is used for cross-browser consistency
-- Babel is used to transpile code for older browsers
+- Babel is used to transpile code for compatibility with older browsers
