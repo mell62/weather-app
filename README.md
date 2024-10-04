@@ -24,7 +24,7 @@ Check it out :point_right:[here!](https://mell62.github.io/weather-app/):point_l
 ## :magic_wand: Extras!
 
 - A loading message displays when weather is being fetched
-- Day and night mode: Webpage switches to light mode and dark mode depending on whether it is day time on night time at the location searched for
+- Day and night mode: Webpage switches to light mode and dark mode depending on whether it is day time or night time at the location searched for
 
 ## :page_with_curl: Note
 
