@@ -4,7 +4,8 @@ This is Weather Sleuth, a weather app developed into the browser to fetch weathe
 
 Check it out :point_right:[here!](https://mell62.github.io/weather-app/):point_left:
 
-![webpage-screenshot](./src/images/screenshot.png)
+![webpage-screenshot-day](./src/images/screenshot-day.png)
+![webpage-screenshot-night](./src/images/screenshot-night.png)
 
 ## :joystick: Features
 
@@ -17,7 +18,7 @@ Check it out :point_right:[here!](https://mell62.github.io/weather-app/):point_l
 ## :tada: Achievements
 
 - **Visual Crossing API** is utilized for fetching weather data around the world
-- - **Webpack** is utilized for the bundling of code of multiple files through ES6 Modules and minification
+- **Webpack** is utilized for the bundling of code of multiple files through ES6 Modules and minification
 - **Single responsibility principle** applied to develop many functions and modules
 
 ## :magic_wand: Extras!
